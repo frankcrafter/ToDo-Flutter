@@ -17,22 +17,27 @@ class MyTextField extends StatelessWidget {
         Expanded(
           child: TextField(
             controller: controller,
+            cursorColor: Theme.of(context).colorScheme.secondary,
+            cursorHeight: 20,
+            cursorWidth: 2,
             decoration: InputDecoration(
               hintText: "What you doing today?",
-              hintStyle: TextStyle(color: Colors.grey[400]),
+              hintStyle: TextStyle(
+                color: Theme.of(context).colorScheme.secondary.withAlpha(180),
+              ),
               contentPadding: EdgeInsetsGeometry.fromLTRB(20, 15, 20, 15),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide(
-                  width: 2,
-                  color: Colors.deepPurple[200]!,
+                  width: 1,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide(
-                  width: 3,
-                  color: Colors.deepPurple[400]!,
+                  width: 1,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               border: OutlineInputBorder(
@@ -46,6 +51,7 @@ class MyTextField extends StatelessWidget {
           onPressed: onPressed,
           btnName: "Add",
           iconType: Icon(Icons.add),
+          fontSize: 18,
         ),
       ],
     );

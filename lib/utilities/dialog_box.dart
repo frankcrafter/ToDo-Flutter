@@ -22,11 +22,14 @@ class DialogBox extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            backgroundColor: Colors.grey[200],
+            backgroundColor: Theme.of(context).colorScheme.surface,
             title: Text(
               "Update Task",
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.w400),
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             content: Column(
               children: [
@@ -34,9 +37,16 @@ class DialogBox extends StatelessWidget {
                   width: 270,
                   child: TextField(
                     controller: controller,
+                    cursorColor: Theme.of(context).colorScheme.secondary,
+                    cursorHeight: 20,
+                    cursorWidth: 2,
                     decoration: InputDecoration(
-                      hintText: "Write new task",
-                      hintStyle: TextStyle(color: Colors.grey[400]),
+                      hintText: "Enter new task",
+                      hintStyle: TextStyle(
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.secondary.withAlpha(180),
+                      ),
                       contentPadding: EdgeInsetsGeometry.fromLTRB(
                         20,
                         15,
@@ -46,15 +56,15 @@ class DialogBox extends StatelessWidget {
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.deepPurple[200]!,
+                          width: 1,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
-                          width: 3,
-                          color: Colors.deepPurple[400]!,
+                          width: 1,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       border: OutlineInputBorder(
@@ -73,6 +83,7 @@ class DialogBox extends StatelessWidget {
                         onPressed: onEdit,
                         btnName: "Save",
                         iconType: null,
+                        fontSize: 15,
                       ),
                     ),
                     SizedBox(
@@ -81,6 +92,7 @@ class DialogBox extends StatelessWidget {
                         onPressed: onCancel,
                         btnName: "Cancel",
                         iconType: null,
+                        fontSize: 15,
                       ),
                     ),
                   ],

@@ -21,14 +21,15 @@ class Task extends StatelessWidget {
       padding: EdgeInsetsGeometry.fromLTRB(15, 0, 15, 15),
       child: Dismissible(
         key: Key(taskName),
+        direction: DismissDirection.endToStart,
         onDismissed: onDismissed,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Colors.deepPurple[400],
+            color: Theme.of(context).colorScheme.surface,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha(100), // shadow color
+                color: Colors.black.withAlpha(120), // shadow color
                 blurRadius: 10,
                 spreadRadius: 1,
                 offset: Offset(0, 10),
@@ -39,13 +40,20 @@ class Task extends StatelessWidget {
             padding: EdgeInsetsGeometry.fromLTRB(15, 15, 20, 15),
             child: Row(
               children: [
-                Checkbox(
-                  value: taskCompleted,
-                  onChanged: onChanged,
-                  activeColor: Colors.deepPurple[400],
-                  side: BorderSide(color: Colors.white, width: 1.5),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                Transform.scale(
+                  scale: 1.2,
+                  child: Checkbox(
+                    value: taskCompleted,
+                    onChanged: onChanged,
+                    activeColor: Theme.of(context).colorScheme.surface,
+                    checkColor: Theme.of(context).colorScheme.inverseSurface,
+                    side: BorderSide(
+                      color: Theme.of(context).colorScheme.secondary,
+                      width: 1.5,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -53,21 +61,29 @@ class Task extends StatelessWidget {
                     taskName.toUpperCase(),
                     style: TextStyle(
                       color: taskCompleted
-                          ? Colors.white.withAlpha(150)
-                          : Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                          ? Theme.of(
+                              context,
+                            ).colorScheme.inversePrimary.withAlpha(150)
+                          : Theme.of(context).colorScheme.inversePrimary,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
                       decoration: taskCompleted
                           ? TextDecoration.lineThrough
                           : TextDecoration.none,
                       decorationThickness: 2,
-                      decorationColor: Colors.white.withAlpha(150),
+                      decorationColor: Theme.of(
+                        context,
+                      ).colorScheme.inversePrimary.withAlpha(150),
                     ),
                   ),
                 ),
                 IconButton(
                   onPressed: onPressed,
-                  icon: Icon(Icons.edit, color: Colors.white, size: 20),
+                  icon: Icon(
+                    Icons.edit,
+                    color: Theme.of(context).colorScheme.secondary,
+                    size: 20,
+                  ),
                 ),
               ],
             ),

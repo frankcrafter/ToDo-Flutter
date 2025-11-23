@@ -28,9 +28,12 @@ class MyBox extends StatelessWidget {
               offset: Offset(0, 5),
             ),
           ],
-          border: BoxBorder.all(width: 2, color: Colors.deepPurple[400]!),
-          color: Colors.grey[100],
-          borderRadius: BorderRadius.circular(30),
+          border: BoxBorder.all(
+            width: 2,
+            color: Theme.of(context).colorScheme.surface,
+          ),
+          color: Theme.of(context).colorScheme.surface,
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Padding(
           padding: EdgeInsetsGeometry.fromLTRB(15, 15, 15, 15),
@@ -43,7 +46,7 @@ class MyBox extends StatelessWidget {
                 children: [
                   TweenAnimationBuilder<double>(
                     tween: Tween<double>(begin: 0, end: getProgress(taskList)),
-                    duration: Duration(milliseconds: 900),
+                    duration: Duration(milliseconds: 1100),
                     curve: Curves.fastEaseInToSlowEaseOut,
                     builder: (context, value, child) {
                       return Column(
@@ -52,7 +55,9 @@ class MyBox extends StatelessWidget {
                             alignment: Alignment.center,
                             children: [
                               CircularProgressIndicator(
-                                backgroundColor: Colors.grey[400],
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.inverseSurface,
                                 constraints: BoxConstraints(
                                   minWidth: 100,
                                   minHeight: 100,
@@ -64,7 +69,9 @@ class MyBox extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.blueGrey[700],
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.secondary,
                                 ),
                               ),
                             ],
@@ -82,14 +89,18 @@ class MyBox extends StatelessWidget {
                 children: [
                   Text(
                     "Total Task",
-                    style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                   ),
                   Text(
                     taskList.length.toString(),
                     style: TextStyle(
                       fontSize: 50,
                       fontWeight: FontWeight.w500,
-                      color: Colors.deepPurple[400],
+                      color: Theme.of(context).colorScheme.inverseSurface,
                     ),
                   ),
                 ],
