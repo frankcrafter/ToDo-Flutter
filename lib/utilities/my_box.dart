@@ -22,13 +22,13 @@ class MyBox extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withAlpha(100), // shadow color
+              color: Colors.black.withAlpha(100),
               blurRadius: 10,
               spreadRadius: 1,
               offset: Offset(0, 5),
             ),
           ],
-          border: BoxBorder.all(width: 2.5, color: Colors.deepPurple[400]!),
+          border: BoxBorder.all(width: 2, color: Colors.deepPurple[400]!),
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(30),
         ),

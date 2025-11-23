@@ -4,6 +4,7 @@ class Task extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
   final Function(bool?)? onChanged;
+  final Function()? onPressed;
   final Function(DismissDirection) onDismissed;
   const Task({
     super.key,
@@ -11,6 +12,7 @@ class Task extends StatelessWidget {
     required this.taskCompleted,
     required this.onChanged,
     required this.onDismissed,
+    required this.onPressed,
   });
 
   @override
@@ -34,7 +36,7 @@ class Task extends StatelessWidget {
             ],
           ),
           child: Padding(
-            padding: EdgeInsetsGeometry.fromLTRB(15, 15, 25, 15),
+            padding: EdgeInsetsGeometry.fromLTRB(15, 15, 20, 15),
             child: Row(
               children: [
                 Checkbox(
@@ -62,6 +64,10 @@ class Task extends StatelessWidget {
                       decorationColor: Colors.white.withAlpha(150),
                     ),
                   ),
+                ),
+                IconButton(
+                  onPressed: onPressed,
+                  icon: Icon(Icons.edit, color: Colors.white, size: 20),
                 ),
               ],
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/models/task.dart';
 import 'package:todo_app/pages/empty_page.dart';
+import 'package:todo_app/utilities/dialog_box.dart';
 import 'package:todo_app/utilities/my_box.dart';
 import 'package:todo_app/utilities/my_textfield.dart';
 
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
+  final _updateController = TextEditingController();
   late int taskAmount = taskList.length;
 
   List taskList = [
@@ -36,6 +38,33 @@ class _HomePageState extends State<HomePage> {
         _controller.clear();
       }
     });
+  }
+
+  // edit task
+  void editTask(int index) {
+    setState(() {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return DialogBox(
+            controller: _updateController,
+            onEdit: () => updateTask(index),
+            onCancel: Navigator.of(context).pop,
+          );
+        },
+      );
+    });
+  }
+
+  //update task
+  void updateTask(int index) {
+    setState(() {
+      if (!taskList[index][1]) {
+        taskList[index][0] = _updateController.text;
+      }
+      _updateController.clear();
+    });
+    Navigator.of(context).pop();
   }
 
   // delete a task
@@ -73,6 +102,7 @@ class _HomePageState extends State<HomePage> {
                   taskCompleted: taskList[index][1],
                   onChanged: (value) => onChecked(index, value),
                   onDismissed: (direction) => deleteTask(index),
+                  onPressed: () => editTask(index),
                 );
               },
             ),

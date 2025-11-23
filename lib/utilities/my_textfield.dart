@@ -31,7 +31,7 @@ class MyTextField extends StatelessWidget {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide(
-                  width: 2,
+                  width: 3,
                   color: Colors.deepPurple[400]!,
                 ),
               ),
@@ -42,7 +42,11 @@ class MyTextField extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 20),
-        MyButton(onPressed: onPressed),
+        MyButton(
+          onPressed: onPressed,
+          btnName: "Add",
+          iconType: Icon(Icons.add),
+        ),
       ],
     );
   }

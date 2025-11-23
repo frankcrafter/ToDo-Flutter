@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final VoidCallback onPressed;
-  const MyButton({super.key, required this.onPressed});
+  final String btnName;
+  final Icon? iconType;
+  const MyButton({
+    super.key,
+    required this.onPressed,
+    required this.btnName,
+    required this.iconType,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      icon: Icon(Icons.add),
-      label: Text("Add"),
+      icon: iconType,
+      label: Text(btnName),
       style: ElevatedButton.styleFrom(
         padding: EdgeInsetsGeometry.fromLTRB(25, 15, 25, 15),
         textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
