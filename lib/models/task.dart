@@ -4,7 +4,6 @@ class Task extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
   final Function(bool?)? onChanged;
-  //final Function(DismissDirection)? confirmDismiss;
   final Function(DismissDirection) onDismissed;
   const Task({
     super.key,
@@ -25,6 +24,13 @@ class Task extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.deepPurple[400],
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withAlpha(100), // shadow color
+                blurRadius: 10, // soften the shadow
+                spreadRadius: 1, // extend the shadow
+              ),
+            ],
           ),
           child: Padding(
             padding: EdgeInsetsGeometry.fromLTRB(15, 15, 15, 15),
