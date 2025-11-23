@@ -98,7 +98,8 @@ class _HomePageState extends State<HomePage> {
                                   begin: 0,
                                   end: getProgress(),
                                 ),
-                                duration: Duration(milliseconds: 350),
+                                duration: Duration(milliseconds: 400),
+                                curve: Curves.easeInOut,
                                 builder: (context, value, child) {
                                   return Column(
                                     children: [

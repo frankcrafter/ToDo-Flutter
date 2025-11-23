@@ -23,7 +23,7 @@ class Task extends StatelessWidget {
         onDismissed: onDismissed,
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(20),
             color: Colors.deepPurple[400],
           ),
           child: Padding(
@@ -34,7 +34,10 @@ class Task extends StatelessWidget {
                   value: taskCompleted,
                   onChanged: onChanged,
                   activeColor: Colors.deepPurple[400],
-                  side: BorderSide(color: Colors.white, width: 2),
+                  side: BorderSide(color: Colors.white, width: 1.5),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
                 ),
                 Expanded(
                   child: Text(
@@ -42,7 +45,7 @@ class Task extends StatelessWidget {
                     style: TextStyle(
                       letterSpacing: 0.5,
                       color: taskCompleted
-                          ? Colors.white.withAlpha(190)
+                          ? Colors.white.withAlpha(150)
                           : Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
