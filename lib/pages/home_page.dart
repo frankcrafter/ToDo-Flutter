@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_app/models/task.dart';
 import 'package:todo_app/pages/empty_page.dart';
+import 'package:todo_app/themes/theme_provider.dart';
 import 'package:todo_app/utilities/dialog_box.dart';
 import 'package:todo_app/utilities/my_box.dart';
 import 'package:todo_app/utilities/my_textfield.dart';
@@ -77,9 +79,23 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface,
+        actions: [
+          Switch(
+            activeThumbColor: Theme.of(context).colorScheme.inverseSurface,
+            activeTrackColor: Theme.of(context).colorScheme.primary,
+            inactiveThumbColor: Theme.of(context).colorScheme.inversePrimary,
+            value: Provider.of<ThemeProvider>(
+              context,
+              listen: false,
+            ).isDarkMode,
+            onChanged: (value) => Provider.of<ThemeProvider>(
+              context,
+              listen: false,
+            ).toggleTheme(),
+          ),
+        ],
         title: Text(
           "My To-Do List",
           style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.w400),

@@ -17,7 +17,6 @@ class MyBox extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsGeometry.fromLTRB(15, 0, 15, 15),
       child: Container(
-        width: double.infinity,
         height: 200,
         decoration: BoxDecoration(
           boxShadow: [
