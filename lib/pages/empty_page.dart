@@ -14,7 +14,7 @@ class EmptyPage extends StatelessWidget {
           Icon(
             Icons.task_alt_outlined,
             size: 100,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: Theme.of(context).colorScheme.inverseSurface,
           ),
           SizedBox(height: 30),
           Text(
@@ -22,7 +22,7 @@ class EmptyPage extends StatelessWidget {
             style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: Colors.grey[800],
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
           SizedBox(height: 15),
@@ -31,7 +31,7 @@ class EmptyPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
-              color: Colors.grey[700],
+              color: Theme.of(context).colorScheme.secondary,
               height: 1.5,
             ),
           ),
