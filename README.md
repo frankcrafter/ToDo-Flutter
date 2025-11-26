@@ -1,3 +1,5 @@
+![image](./images/1.png)
+
 # 📝 TodoApp
 
 A clean and lightweight **Flutter Todo App** to help you stay organized and productive.
@@ -10,8 +12,6 @@ Built with a focus on simplicity, smooth UI, and fast performance.
 - 📱 Minimal UI
 - 🌓 Implement dark mode
 - 💾 Local storage (persistent tasks)
-
-![image](./images/1.png)
 
 ## 🌱 Future Improvements
 
