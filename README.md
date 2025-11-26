@@ -1,6 +1,6 @@
-![image](./images/1.png)
-
 # 📝 TodoApp
+
+![image](./images/1.png)
 
 A clean and lightweight **Flutter Todo App** to help you stay organized and productive.
 Built with a focus on simplicity, smooth UI, and fast performance.
