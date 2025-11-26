@@ -88,13 +88,6 @@ class _HomePageState extends State<HomePage> {
               style: IconButton.styleFrom(
                 padding: EdgeInsetsGeometry.all(15),
                 backgroundColor: Theme.of(context).colorScheme.surface,
-                side: BorderSide(
-                  width: 0.3,
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18),
-                ),
               ),
               icon: Icon(
                 Theme.of(context).brightness == Brightness.dark
