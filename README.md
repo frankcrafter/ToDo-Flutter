@@ -11,15 +11,13 @@ Built with a focus on simplicity, smooth UI, and fast performance.
 - 🌓 Implement dark mode
 - 💾 Local storage (persistent tasks)
 
----
-
 ![image](./images/1.png)
 ![image](./images/2.png)
-
----
 
 ## 🌱 Future Improvements
 
 - 🔔 Add task notifications & reminders
 - 📂 Add task categories
 - 🗂️ Drag-and-drop task reordering
+
+---
