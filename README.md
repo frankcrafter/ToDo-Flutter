@@ -1,4 +1,4 @@
-# 📝 TodoApp
+# 📝 To Do Application
 
 ![image](./images/1.png)
 
