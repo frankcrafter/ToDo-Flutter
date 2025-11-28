@@ -39,7 +39,7 @@ class Task extends StatelessWidget {
                   offset: Offset(0, 10),
                 ),
               ],
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(15),
               color: taskCompleted
                   ? Theme.of(context).colorScheme.inverseSurface
                   : Theme.of(context).colorScheme.surface,
